@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto com React</title>
+    <style>
+        .title {
+            color: green;
+        }
+
+        .sub {color: blue}
+    </style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<div id="root2"></div>
+
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script>
+    ReactDOM.render(
+        React.createElement(
+            "h1", //elemento
+            {className: "title"},
+            "Olá mundo com React :D",
+            React.createElement("br"),
+            React.createElement(
+                "small",
+                 {className: "sub"},
+                 "React é muito legal!!!"
+            )
+        ),
+        document.getElementById("root")
+    );
+</script>
+
+<script type="text/babel">
+    ReactDOM.render(
+        <h1 className="title">
+            Olá mundo com React :D
+            <br />
+            <small className="sub">React é muito legal!!!</small>
+        </h1>,
+        document.getElementById("root2")
+    );
+</script>
+
+</body>
+</html>

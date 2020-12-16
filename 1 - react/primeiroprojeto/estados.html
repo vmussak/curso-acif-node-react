@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Estados</title>
+    </head>
+    <body>
+        <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+ 
+        const App = () => {
+            let [state, setState] = React.useState(5);
+
+            return (
+                <div>
+                    <h1>Estados no React :D</h1>
+                    <p>Meu estado: {state}</p>
+                    <button
+                        onClick={() => {
+                            setState(state + 1);
+                        }}
+                    >
+                        Somar 1
+                    </button>
+
+                    <button
+                        onClick={() => {
+                            setState(function(estadoAnterior){
+                                return estadoAnterior + 1;
+                            });
+                            setState();
+                            setState(function(estadoAnterior){
+                                return estadoAnterior + 1;
+                            });
+                        }}
+                    >
+                        Somar 3
+                    </button>
+                </div>
+            )
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById("root")
+        );
+        
+    </script>
+    </body>
+</html>
